@@ -4,38 +4,46 @@ class LoginForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: null,
-      password: null
+      username: "",
+      password: ""
     };
   }
 
-  handleInputChange(event) {
+  handleUserChange(event) {
     this.setState({
-      username: event.target.value,
+      username: event.target.value
+    })
+  }
+
+  handlePassChange(event) {
+    this.setState({
       password: event.target.value
     })
   }
 
-  handleOnSubmit(event){
-    event.preventDefault()
-    if (this.state.username===null){
+
+
+  handleSubmit(event){
+    event.preventDefault();
+    if (this.state.username==="" || this.state.password===""){
       alert("Please fill both feilds") 
     }else{
-      return this.props.handleLogin
+      return this.props.handleLogin(this.state)
     }
   }
 
 
 
   render() {
+    console.log(this.state.password)
     return (
-      <form onSubmit={event => this.handleOnSubmit(event)} >
+      <form onSubmit={(event) => this.handleSubmit(event)}  >
         <div>
           <label>
             Username
             <input id="username" name="username" type="text"
             value={this.state.username}
-            onChange={event => this.handleInputChange(event)} />
+            onChange={event => this.handleUserChange(event)} />
           </label>
         </div>
         <div>
@@ -43,7 +51,7 @@ class LoginForm extends React.Component {
             Password
             <input id="password" name="password" type="password"
             value={this.state.password}
-            onChange={event => this.handleInputChange(event)} />
+            onChange={event => this.handlePassChange(event)} />
           </label>
         </div>
         <div>

@@ -15,15 +15,8 @@ class TwitterMessage extends React.Component {
       message: event.target.value,
       messageLeangth: event.target.value.length
     })
-    // counter(event.target.value)
   }
-  // counter(props){
-  //   if (props===null){
-  //     return 0
-  //   }else{
-  //     return props.length
-  //   }
-  // }
+
 
   render() {
     return (
