@@ -13,12 +13,12 @@ class App extends Component {
       <div>
 
         <h1>
-          <pre>Login Form</pre>
+          <pre>LoginForm</pre>
         </h1>
         <LoginForm handleLogin={this.login} />
 
         <h1>
-          <pre>Twitter Message</pre>
+          <pre>TwitterMessage</pre>
         </h1>
         <TwitterMessage maxChars={280} />
 
